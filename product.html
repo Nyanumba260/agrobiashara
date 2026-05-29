@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">FarmFresh</a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+      <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="container py-5">
+
+  <h1 class="text-center mb-5">Farm Products</h1>
+
+  <div class="row g-4">
+
+    <!-- 18 PRODUCTS -->
+
+    <!-- Product Card -->
+    <script>
+      const products = [
+        ["Tomatoes","150","Fresh tomatoes"],
+        ["Onions","120","Organic onions"],
+        ["Potatoes","200","Fresh potatoes"],
+        ["Cabbage","100","Healthy cabbage"],
+        ["Spinach","80","Fresh spinach"],
+        ["Carrots","140","Crunchy carrots"],
+        ["Mangoes","250","Sweet mangoes"],
+        ["Bananas","180","Fresh bananas"],
+        ["Avocados","220","Organic avocados"],
+        ["Watermelon","300","Fresh watermelon"],
+        ["Oranges","240","Juicy oranges"],
+        ["Flowers","500","Beautiful flowers"],
+        ["Beans","170","Organic beans"],
+        ["Maize","210","Fresh maize"],
+        ["Rice","400","Quality rice"],
+        ["Garlic","260","Natural garlic"],
+        ["Capsicum","190","Green capsicum"],
+        ["Strawberries","350","Fresh strawberries"]
+      ];
+
+      document.write(products.map(p => `
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+
+          <img src="images/product.jpg" class="card-img-top product-img">
+
+          <div class="card-body">
+            <h5 class="card-title">${p[0]}</h5>
+
+            <p class="card-text">${p[2]}</p>
+
+            <h4>Ksh ${p[1]}</h4>
+
+            <button class="btn btn-primary">Add To Cart</button>
+          </div>
+
+        </div>
+      </div>
+      `).join(""));
+    </script>
+
+  </div>
+
+</section>
+
+</body>
+</html>

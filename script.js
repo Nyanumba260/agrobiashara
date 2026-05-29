@@ -6,6 +6,65 @@ setTimeout(() => {
 }, 5000);
 
 
+// LOGIN BUTTON ACTION WITH VALIDATION
+document.addEventListener("DOMContentLoaded", function(){
+
+    let loginForm = document.querySelector(".login-popup form");
+
+    if(loginForm){
+
+        loginForm.addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            let email = document.querySelector("input[name='email']").value.trim();
+
+            let password = document.querySelector("input[name='password']").value.trim();
+
+            let role = document.querySelector("select[name='role']").value;
+
+            // VALIDATE FIELDS
+            if(!email || !password){
+
+                alert("Please fill in all fields!");
+
+                return false;
+
+            }
+
+            // VALIDATE EMAIL FORMAT
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if(!emailRegex.test(email)){
+
+                alert("Please enter a valid email address!");
+
+                return false;
+
+            }
+
+            // VALIDATE PASSWORD LENGTH
+            if(password.length < 4){
+
+                alert("Password must be at least 4 characters!");
+
+                return false;
+
+            }
+
+            // SHOW SUCCESS MESSAGE
+            alert("Welcome " + role + "! Logging you in...");
+
+            // SUBMIT THE FORM
+            loginForm.submit();
+
+        });
+
+    }
+
+});
+
+
 // CLOSE LOGIN POPUP WHEN CLICKING OUTSIDE
 window.onclick = function(e){
 
